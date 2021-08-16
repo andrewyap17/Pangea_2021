@@ -1,0 +1,46 @@
+{
+    "name": "LoginFailureMessage",
+    "fantasyName": "LoginFailureMessage",
+    "vendor": "Salora",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=21.1.0",
+        "SCS": ">=21.1.0"
+    },
+    "description": "Custom Login Message Login|Register section.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/LoginFailureMessage/Configuration/LoginFailureMessage.json"
+        ]
+    },
+    "javascript": {
+        "entry_points": {
+            "checkout": "Modules/LoginFailureMessage/JavaScript/Salora.LoginFailureMessage.js"
+        },
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/LoginFailureMessage/JavaScript/Salora.LoginFailureMessage.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/LoginFailureMessage",
+    "suitescript2": {
+        "files": []
+    }
+}

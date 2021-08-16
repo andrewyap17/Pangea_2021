@@ -11,7 +11,7 @@
         "port": 7777
     },
     "fetchConfig": {
-        "extension": "Layout"
+        "extension": "News"
     },
     "extensionMode": true,
     "preserveManifest": false,
@@ -29,10 +29,18 @@
         "extensions_dest_name": "Deploy_Extensions",
         "extmech_parent": "-15",
         "extensions_path": [
+            "Workspace/BingAnalytics",
+            "Workspace/DealerPriceListPage",
             "Workspace/FacetsExtension",
             "Workspace/FooterExtension",
+            "Workspace/HideQuoteExtension",
             "Workspace/HomepageExtension",
-            "Workspace/Moment"
+            "Workspace/LoginFailureMessage",
+            "Workspace/Moment",
+            "Workspace/News",
+            "Workspace/ProductDetailsExtension",
+            "Workspace/RequestQuoteMyAccountLink",
+            "Workspace/Testimonials"
         ],
         "theme_path": "Workspace/Extras/PA2021_Theme",
         "overrides_path": "Workspace/Extras/PA2021_Theme/Overrides"
@@ -82,19 +90,7 @@
         "update": true,
         "chunk_size": 80
     },
-    "credentials": {
-        "user_agent": "sc-extension-devtools/2021.1.0",
-        "authID": "PANGEA_SB2",
-        "key": "446765bc51e70086cf582d32f0486fc0a764354ffec6c983b94e63af331346c4",
-        "secret": "97fda39654d2f0cf3f0f9011d97616f96a3136e2c7659b867e57a1e1bbbcc566",
-        "account": "5035704_SB2",
-        "hostname": "5035704-SB2.restlets.api.netsuite.com",
-        "website": 2,
-        "target_folder": {
-            "parentId": "-15",
-            "folderName": "Deploy_Extensions"
-        }
-    },
+    "credentials": {},
     "nsdeployPath": ".nsdeploy",
     "_": [
         "extension:deploy"
@@ -134,13 +130,13 @@
             "extension_id": "2701"
         },
         {
-            "name": "Layout",
-            "fantasyName": "Layout",
+            "name": "Contact",
+            "fantasyName": "Contact",
             "vendor": "JHM",
             "type": "extension",
             "target": "SCA,SCS",
             "version": "1.0.0",
-            "description": "Layout Customizations",
+            "description": "Contact",
             "assets": {
                 "img": {
                     "files": []
@@ -150,79 +146,161 @@
                 },
                 "services": {
                     "files": [
-                        "services/Layout.Service.ss"
+                        "services/Contact.Service.ss"
                     ]
                 }
             },
             "configuration": {
                 "files": [
-                    "Modules/Footer/Configuration/Footer.Custom.json",
-                    "Modules/Home/Configuration/Home.Custom.json"
+                    "Modules/Contact/Configuration/Contact.json"
                 ]
+            },
+            "templates": {
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/Contact/Templates/jhm_contact.tpl"
+                        ]
+                    }
+                }
             },
             "sass": {
                 "entry_points": {
-                    "shopping": "Modules/Layout/Sass/_layout-layout.scss",
-                    "myaccount": "Modules/Layout/Sass/_layout-layout.scss",
-                    "checkout": "Modules/Layout/Sass/_layout-layout.scss"
+                    "shopping": "Modules/Contact/Sass/_contact-contact.scss"
                 },
                 "files": [
-                    "Modules/Layout/Sass/_layout-layout.scss",
-                    "Modules/Layout/Sass/_layout.scss",
-                    "Modules/Home/Sass/_layout-home.scss",
-                    "Modules/Home/Sass/_home.scss"
+                    "Modules/Contact/Sass/_contact-contact.scss",
+                    "Modules/Contact/Sass/_contact.scss"
                 ]
             },
             "javascript": {
                 "entry_points": {
-                    "shopping": "Modules/Layout/JavaScript/JHM.Layout.Layout.js",
-                    "myaccount": "Modules/Layout/JavaScript/JHM.Layout.Layout.js",
-                    "checkout": "Modules/Layout/JavaScript/JHM.Layout.Layout.js"
+                    "shopping": "Modules/Contact/JavaScript/JHM.Contact.Contact.js"
                 },
                 "application": {
                     "shopping": {
                         "files": [
-                            "Modules/Layout/JavaScript/JHM.Layout.Layout.js",
-                            "Modules/Footer/JavaScript/JHM.Layout.Footer.js",
-                            "Modules/Home/JavaScript/JHM.Layout.Home.js"
-                        ]
-                    },
-                    "myaccount": {
-                        "files": [
-                            "Modules/Layout/JavaScript/JHM.Layout.Layout.js",
-                            "Modules/Footer/JavaScript/JHM.Layout.Footer.js",
-                            "Modules/Home/JavaScript/JHM.Layout.Home.js"
-                        ]
-                    },
-                    "checkout": {
-                        "files": [
-                            "Modules/Layout/JavaScript/JHM.Layout.Layout.js",
-                            "Modules/Footer/JavaScript/JHM.Layout.Footer.js",
-                            "Modules/Home/JavaScript/JHM.Layout.Home.js"
+                            "Modules/Contact/JavaScript/JHM.Contact.Contact.js",
+                            "Modules/Contact/JavaScript/Contact.Router.js",
+                            "Modules/Contact/JavaScript/Contact.View.js",
+                            "Modules/Contact/JavaScript/Contact.Model.js"
                         ]
                     }
                 }
             },
             "ssp-libraries": {
-                "entry_point": "Modules/Layout/SuiteScript/JHM.Layout.Layout.js",
+                "entry_point": "Modules/Contact/SuiteScript/JHM.Contact.Contact.js",
                 "files": [
-                    "Modules/Layout/SuiteScript/JHM.Layout.Layout.js",
-                    "Modules/Layout/SuiteScript/Layout.ServiceController.js",
-                    "Modules/Layout/SuiteScript/Layout.Model.js"
+                    "Modules/Contact/SuiteScript/JHM.Contact.Contact.js",
+                    "Modules/Contact/SuiteScript/Contact.ServiceController.js",
+                    "Modules/Contact/SuiteScript/Contact.Model.js"
                 ]
             },
-            "path": "SuiteScripts/Deploy_Extensions/JHM/Layout@1.0.0",
+            "path": "SuiteScripts/Deploy_Extensions/JHM/Contact@1.0.0",
             "activation_id": "8",
-            "extension_id": "801"
+            "extension_id": "401"
         },
         {
-            "name": "Moment",
-            "fantasyName": "Moment",
+            "name": "DealerPriceListPage",
+            "fantasyName": "DealerPriceListPage",
             "vendor": "JHM",
             "type": "extension",
             "target": "SCA,SCS",
-            "version": "2.22.2",
-            "description": "Moment.js",
+            "version": "1.0.0",
+            "description": "Adds dealer/distributor price list page to My Acct",
+            "assets": {
+                "img": {
+                    "files": [
+                        "img/custom-tooltip-bg.png"
+                    ]
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": [
+                        "services/DealerPriceListPage.Service.ss"
+                    ]
+                }
+            },
+            "configuration": {
+                "files": [
+                    "Modules/DealerPriceListPage/Configuration/DealerPriceListPage.json"
+                ]
+            },
+            "templates": {
+                "application": {
+                    "myaccount": {
+                        "files": [
+                            "Modules/DealerPriceListPage/Templates/jhm_dealerpricelistpage_dealerpricelistpage.tpl",
+                            "Modules/DealerPriceListPage/Templates/jhm_dealerpricelistpage_header_menu_myacct.tpl"
+                        ]
+                    },
+                    "shopping": {
+                        "files": [
+                            "Modules/DealerPriceListPage/Templates/jhm_dealerpricelistpage_dealerpricelistpage.tpl",
+                            "Modules/DealerPriceListPage/Templates/jhm_dealerpricelistpage_header_menu_myacct.tpl"
+                        ]
+                    }
+                }
+            },
+            "sass": {
+                "entry_points": {
+                    "myaccount": "Modules/DealerPriceListPage/Sass/_dealerpricelistpage-dealerpricelistpage.scss",
+                    "shopping": "Modules/DealerPriceListPage/Sass/_dealerpricelistpage-dealerpricelistpage.scss"
+                },
+                "files": [
+                    "Modules/DealerPriceListPage/Sass/_dealerpricelistpage-dealerpricelistpage.scss"
+                ]
+            },
+            "javascript": {
+                "entry_points": {
+                    "myaccount": "Modules/DealerPriceListPage/JavaScript/JHM.DealerPriceListPage.DealerPriceListPage.js",
+                    "shopping": "Modules/DealerPriceListPage/JavaScript/JHM.DealerPriceListPage.DealerPriceListPage.js"
+                },
+                "application": {
+                    "myaccount": {
+                        "files": [
+                            "Modules/DealerPriceListPage/JavaScript/JHM.DealerPriceListPage.DealerPriceListPage.js",
+                            "Modules/DealerPriceListPage/JavaScript/DealerPriceListPage.View.js",
+                            "Modules/DealerPriceListPage/JavaScript/DealerPriceListPage.Router.js",
+                            "Modules/DealerPriceListPage/JavaScript/DealerPriceListPage.Model.js"
+                        ]
+                    },
+                    "shopping": {
+                        "files": [
+                            "Modules/DealerPriceListPage/JavaScript/JHM.DealerPriceListPage.DealerPriceListPage.js",
+                            "Modules/DealerPriceListPage/JavaScript/DealerPriceListPage.View.js",
+                            "Modules/DealerPriceListPage/JavaScript/DealerPriceListPage.Router.js",
+                            "Modules/DealerPriceListPage/JavaScript/DealerPriceListPage.Model.js"
+                        ]
+                    }
+                }
+            },
+            "ssp-libraries": {
+                "entry_point": "Modules/DealerPriceListPage/SuiteScript/JHM.DealerPriceListPage.DealerPriceListPage.js",
+                "files": [
+                    "Modules/DealerPriceListPage/SuiteScript/JHM.DealerPriceListPage.DealerPriceListPage.js",
+                    "Modules/DealerPriceListPage/SuiteScript/DealerPriceListPage.ServiceController.js",
+                    "Modules/DealerPriceListPage/SuiteScript/DealerPriceListPage.Model.js"
+                ]
+            },
+            "path": "SuiteScripts/Deploy_Extensions/JHM/DealerPriceListPage@1.0.0",
+            "activation_id": "8",
+            "extension_id": "2401"
+        },
+        {
+            "name": "FacetsExtension",
+            "fantasyName": "FacetsExtension",
+            "vendor": "Salora",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "target_version": {
+                "SCA": ">=21.1.0",
+                "SCS": ">=21.1.0"
+            },
+            "version": "1.0.0",
+            "description": " ",
             "assets": {
                 "img": {
                     "files": []
@@ -236,31 +314,217 @@
             },
             "javascript": {
                 "entry_points": {
-                    "shopping": "Modules/Moment/JavaScript/Moment.js",
-                    "myaccount": "Modules/Moment/JavaScript/Moment.js",
-                    "checkout": "Modules/Moment/JavaScript/Moment.js"
+                    "shopping": "Modules/FacetsExtension/JavaScript/Salora.FacetsExtension.js"
                 },
                 "application": {
                     "shopping": {
                         "files": [
-                            "Modules/Moment/JavaScript/Moment.js"
-                        ]
-                    },
-                    "myaccount": {
-                        "files": [
-                            "Modules/Moment/JavaScript/Moment.js"
-                        ]
-                    },
-                    "checkout": {
-                        "files": [
-                            "Modules/Moment/JavaScript/Moment.js"
+                            "Modules/FacetsExtension/JavaScript/Salora.FacetsExtension.js"
                         ]
                     }
                 }
             },
-            "path": "SuiteScripts/Deploy_Extensions/JHM/Moment@2.22.2",
+            "suitescript2": {
+                "files": []
+            },
+            "path": "SuiteScripts/Deploy_Extensions/Salora/FacetsExtension@1.0.0",
             "activation_id": "8",
-            "extension_id": "701"
+            "extension_id": "5201"
+        },
+        {
+            "name": "FooterExtension",
+            "fantasyName": "FooterExtension",
+            "vendor": "Salora",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "target_version": {
+                "SCA": ">=21.1.0",
+                "SCS": ">=21.1.0"
+            },
+            "version": "1.0.0",
+            "description": " ",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": []
+                }
+            },
+            "configuration": {
+                "files": [
+                    "Modules/FooterExtension/Configuration/FooterExtension.json"
+                ]
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/FooterExtension/JavaScript/Salora.FooterExtension.js",
+                    "myaccount": "Modules/FooterExtension/JavaScript/Salora.FooterExtension.js",
+                    "checkout": "Modules/FooterExtension/JavaScript/Salora.FooterExtension.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/FooterExtension/JavaScript/Salora.FooterExtension.js"
+                        ]
+                    },
+                    "myaccount": {
+                        "files": [
+                            "Modules/FooterExtension/JavaScript/Salora.FooterExtension.js"
+                        ]
+                    },
+                    "checkout": {
+                        "files": [
+                            "Modules/FooterExtension/JavaScript/Salora.FooterExtension.js"
+                        ]
+                    }
+                }
+            },
+            "suitescript2": {
+                "files": []
+            },
+            "path": "SuiteScripts/Deploy_Extensions/Salora/FooterExtension@1.0.0",
+            "activation_id": "8",
+            "extension_id": "5101"
+        },
+        {
+            "name": "HideQuoteExtension",
+            "fantasyName": "HideQuoteExtension",
+            "vendor": "Salora",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "target_version": {
+                "SCA": ">=21.1.0",
+                "SCS": ">=21.1.0"
+            },
+            "version": "1.0.0",
+            "description": " ",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": []
+                }
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/HideQuoteButtons/JavaScript/HideQuoteButtons.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/HideQuoteButtons/JavaScript/HideQuoteButtons.js"
+                        ]
+                    }
+                }
+            },
+            "suitescript2": {
+                "files": []
+            },
+            "path": "SuiteScripts/Deploy_Extensions/Salora/HideQuoteExtension@1.0.0",
+            "activation_id": "8",
+            "extension_id": "5501"
+        },
+        {
+            "name": "HomepageExtension",
+            "fantasyName": "HomepageExtension",
+            "vendor": "Salora",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "target_version": {
+                "SCA": ">=21.1.0",
+                "SCS": ">=21.1.0"
+            },
+            "version": "1.0.0",
+            "description": " ",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": []
+                }
+            },
+            "configuration": {
+                "files": [
+                    "Modules/HomepageExtension/Configuration/HomepageExtension.json"
+                ]
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/HomepageExtension/JavaScript/Salora.HomepageExtension.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/HomepageExtension/JavaScript/Salora.HomepageExtension.js"
+                        ]
+                    }
+                }
+            },
+            "suitescript2": {
+                "files": []
+            },
+            "path": "SuiteScripts/Deploy_Extensions/Salora/HomepageExtension@1.0.0",
+            "activation_id": "8",
+            "extension_id": "5001"
+        },
+        {
+            "name": "LoginFailureMessage",
+            "fantasyName": "LoginFailureMessage",
+            "vendor": "Salora",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "target_version": {
+                "SCA": ">=21.1.0",
+                "SCS": ">=21.1.0"
+            },
+            "version": "1.0.0",
+            "description": "Custom Login Message Login|Register section.",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": []
+                }
+            },
+            "configuration": {
+                "files": [
+                    "Modules/LoginFailureMessage/Configuration/LoginFailureMessage.json"
+                ]
+            },
+            "javascript": {
+                "entry_points": {
+                    "checkout": "Modules/LoginFailureMessage/JavaScript/Salora.LoginFailureMessage.js"
+                },
+                "application": {
+                    "checkout": {
+                        "files": [
+                            "Modules/LoginFailureMessage/JavaScript/Salora.LoginFailureMessage.js"
+                        ]
+                    }
+                }
+            },
+            "suitescript2": {
+                "files": []
+            },
+            "path": "SuiteScripts/Deploy_Extensions/Salora/LoginFailureMessage@1.0.0",
+            "activation_id": "8",
+            "extension_id": "5401"
         },
         {
             "name": "News",
@@ -347,7 +611,7 @@
                 "SCA": ">=21.1.0",
                 "SCS": ">=21.1.0"
             },
-            "version": "21.1.0",
+            "version": "1.7.0",
             "description": "",
             "override": [],
             "skins": [
@@ -1704,9 +1968,52 @@
                     ]
                 }
             },
-            "path": "SuiteScripts/Deploy_Extensions/SALORAERP/PA2021_Theme@21.1.0",
+            "path": "SuiteScripts/Deploy_Extensions/SALORAERP/PA2021_Theme@1.7.0",
             "activation_id": "8",
-            "extension_id": "4901"
+            "extension_id": "5801"
+        },
+        {
+            "name": "ProductDetailsExtension",
+            "fantasyName": "ProductDetailsExtension",
+            "vendor": "Salora",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "target_version": {
+                "SCA": ">=21.1.0",
+                "SCS": ">=21.1.0"
+            },
+            "version": "1.0.0",
+            "description": " ",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": []
+                }
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/ProductDetailsExtension/JavaScript/ProductDetailsExtension.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/ProductDetailsExtension/JavaScript/Product.Item.KeyMapping.js",
+                            "Modules/ProductDetailsExtension/JavaScript/ProductDetailsExtension.js"
+                        ]
+                    }
+                }
+            },
+            "suitescript2": {
+                "files": []
+            },
+            "path": "SuiteScripts/Deploy_Extensions/Salora/ProductDetailsExtension@1.0.0",
+            "activation_id": "8",
+            "extension_id": "5601"
         },
         {
             "name": "Testimonials",
@@ -1782,5 +2089,6 @@
             "extension_id": "301"
         }
     ],
-    "to": true
+    "to": true,
+    "ask_credentials": true
 }

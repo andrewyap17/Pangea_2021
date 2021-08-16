@@ -1,0 +1,41 @@
+{
+    "name": "RequestQuoteMyAccountLink",
+    "fantasyName": "RequestQuoteMyAccountLink",
+    "vendor": "Salora",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCS,SCA",
+    "target_version": {
+        "SCS": ">=21.1.0",
+        "SCA": ">=21.1.0"
+    },
+    "description": "",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/RequestQuoteMyAccountLink/JavaScript/RequestQuoteMyAccountLink.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/RequestQuoteMyAccountLink/JavaScript/RequestQuoteMyAccountLink.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/RequestQuoteMyAccountLink",
+    "suitescript2": {
+        "files": []
+    }
+}
