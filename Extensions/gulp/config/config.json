@@ -11,7 +11,7 @@
         "port": 7777
     },
     "fetchConfig": {
-        "extension": "News"
+        "extension": "Contact"
     },
     "extensionMode": true,
     "preserveManifest": false,
@@ -30,16 +30,21 @@
         "extmech_parent": "-15",
         "extensions_path": [
             "Workspace/BingAnalytics",
+            "Workspace/Contact",
             "Workspace/DealerPriceListPage",
+            "Workspace/Dealers",
+            "Workspace/DynamicSearchCategory",
             "Workspace/FacetsExtension",
             "Workspace/FooterExtension",
             "Workspace/HideQuoteExtension",
             "Workspace/HomepageExtension",
             "Workspace/LoginFailureMessage",
+            "Workspace/Manuals",
             "Workspace/Moment",
             "Workspace/News",
             "Workspace/ProductDetailsExtension",
             "Workspace/RequestQuoteMyAccountLink",
+            "Workspace/StateComplianceWarning",
             "Workspace/Testimonials"
         ],
         "theme_path": "Workspace/Extras/PA2021_Theme",
@@ -90,7 +95,23 @@
         "update": true,
         "chunk_size": 80
     },
-    "credentials": {},
+    "credentials": {
+        "user_agent": "sc-extension-devtools/2021.1.0",
+        "authID": "PANGEA_SB2",
+        "key": "446765bc51e70086cf582d32f0486fc0a764354ffec6c983b94e63af331346c4",
+        "secret": "97fda39654d2f0cf3f0f9011d97616f96a3136e2c7659b867e57a1e1bbbcc566",
+        "account": "5035704_SB2",
+        "hostname": "5035704-SB2.restlets.api.netsuite.com",
+        "website": 2,
+        "target_folder": {
+            "parentId": "-15",
+            "folderName": "Deploy_Extensions"
+        },
+        "domain": "sca2021.pangeaaudio.com",
+        "webapp_id": "59656",
+        "ssp_folder": "59656",
+        "is_scis": false
+    },
     "nsdeployPath": ".nsdeploy",
     "_": [
         "extension:deploy"
@@ -290,6 +311,124 @@
             "extension_id": "2401"
         },
         {
+            "name": "Dealers",
+            "fantasyName": "Dealers",
+            "vendor": "JHM",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "version": "1.0.0",
+            "description": "Dealers page",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": [
+                        "services/Dealers.Service.ss"
+                    ]
+                }
+            },
+            "templates": {
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/Dealers/Templates/jhm_dealers_dealers.tpl",
+                            "Modules/Dealers/Templates/jhm_dealers_info.tpl"
+                        ]
+                    }
+                }
+            },
+            "sass": {
+                "entry_points": {
+                    "shopping": "Modules/Dealers/Sass/_dealers-dealers.scss"
+                },
+                "files": [
+                    "Modules/Dealers/Sass/_dealers-dealers.scss"
+                ]
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/Dealers/JavaScript/JHM.Dealers.Dealers.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/Dealers/JavaScript/JHM.Dealers.Dealers.js",
+                            "Modules/Dealers/JavaScript/Dealers.View.js",
+                            "Modules/Dealers/JavaScript/Dealers.Router.js",
+                            "Modules/Dealers/JavaScript/Dealers.Model.js",
+                            "Modules/Dealers/JavaScript/Dealers.Info.View.js"
+                        ]
+                    }
+                }
+            },
+            "ssp-libraries": {
+                "entry_point": "Modules/Dealers/SuiteScript/JHM.Dealers.Dealers.js",
+                "files": [
+                    "Modules/Dealers/SuiteScript/JHM.Dealers.Dealers.js",
+                    "Modules/Dealers/SuiteScript/Dealers.ServiceController.js",
+                    "Modules/Dealers/SuiteScript/Dealers.Model.js"
+                ]
+            },
+            "path": "SuiteScripts/Deploy_Extensions/JHM/Dealers@1.0.0",
+            "activation_id": "8",
+            "extension_id": "1401"
+        },
+        {
+            "name": "DynamicSearchCategory",
+            "fantasyName": "DynamicSearchCategory",
+            "vendor": "JHM",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "version": "1.0.0",
+            "description": "Sets category to display items returned from saved search",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": [
+                        "services/DynamicSearchCategory.Service.ss"
+                    ]
+                }
+            },
+            "configuration": {
+                "files": [
+                    "Modules/DynamicSearchCategory/Configuration/DynamicSearchCategory.json"
+                ]
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/DynamicSearchCategory/JavaScript/JHM.DynamicSearchCategory.DynamicSearchCategory.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/DynamicSearchCategory/JavaScript/JHM.DynamicSearchCategory.DynamicSearchCategory.js",
+                            "Modules/DynamicSearchCategory/JavaScript/DynamicSearchCategory.Model.js"
+                        ]
+                    }
+                }
+            },
+            "ssp-libraries": {
+                "entry_point": "Modules/DynamicSearchCategory/SuiteScript/JHM.DynamicSearchCategory.DynamicSearchCategory.js",
+                "files": [
+                    "Modules/DynamicSearchCategory/SuiteScript/JHM.DynamicSearchCategory.DynamicSearchCategory.js",
+                    "Modules/DynamicSearchCategory/SuiteScript/DynamicSearchCategory.ServiceController.js",
+                    "Modules/DynamicSearchCategory/SuiteScript/DynamicSearchCategory.Model.js"
+                ]
+            },
+            "path": "SuiteScripts/Deploy_Extensions/JHM/DynamicSearchCategory@1.0.0",
+            "activation_id": "8",
+            "extension_id": "2101"
+        },
+        {
             "name": "FacetsExtension",
             "fantasyName": "FacetsExtension",
             "vendor": "Salora",
@@ -389,6 +528,113 @@
             "path": "SuiteScripts/Deploy_Extensions/Salora/FooterExtension@1.0.0",
             "activation_id": "8",
             "extension_id": "5101"
+        },
+        {
+            "name": "GridOrder",
+            "fantasyName": "Grid Order",
+            "vendor": "SuiteCommerce",
+            "version": "1.0.5",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "description": "The SuiteCommerce Grid Order extension lets users buy multiple variations of a product more easily by displaying purchasing options in a grid on the product details page.",
+            "skins": [],
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": []
+                }
+            },
+            "configuration": {
+                "files": [
+                    "Modules/Common/Configuration/Configuration.json"
+                ]
+            },
+            "sass": {
+                "entry_points": {
+                    "shopping": "Modules/Main/Sass/_sc_grid_order_shopping.scss"
+                },
+                "files": [
+                    "Modules/Main/Sass/_sc_grid_order_shopping.scss",
+                    "Modules/GridOrder/Sass/_grid-order.scss",
+                    "Modules/GridOrder/Sass/_grid-order-footer.scss",
+                    "Modules/GridOrder/Sass/_grid-order-summary.scss",
+                    "Modules/GridOrder/Sass/_grid-order-cell-price-schedule.scss",
+                    "Modules/GridOrder/Sass/_grid-order-cell-matrix-item-option.scss",
+                    "Modules/GridOrder/Sass/_grid-order-cell-matrix-child-item.scss",
+                    "Modules/GridOrder/Sass/_grid-order-confirmation.scss",
+                    "Modules/GridOrder/Sass/_grid-order-row.scss",
+                    "Modules/GridOrder/Sass/_grid-order-variables.scss"
+                ]
+            },
+            "templates": {
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/GridOrder/Templates/grid_order.tpl",
+                            "Modules/GridOrder/Templates/grid_order_row.tpl",
+                            "Modules/GridOrder/Templates/grid_order_footer.tpl",
+                            "Modules/GridOrder/Templates/grid_order_summary.tpl",
+                            "Modules/GridOrder/Templates/grid_order_confirmation.tpl",
+                            "Modules/GridOrder/Templates/grid_order_cell_price_schedule.tpl",
+                            "Modules/GridOrder/Templates/grid_order_cell_matrix_item_option.tpl",
+                            "Modules/GridOrder/Templates/grid_order_cell_matrix_child_item.tpl"
+                        ]
+                    }
+                }
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/Main/JavaScript/SuiteCommerce.GridOrder.Shopping.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/GridOrder/JavaScript/GridOrder.js",
+                            "Modules/Common/JavaScript/Configuration.js",
+                            "Modules/Common/JavaScript/Utils.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Configuration.js",
+                            "Modules/Instrumentation/JavaScript/Instrumentation.FallbackLogger.js",
+                            "Modules/Instrumentation/JavaScript/Instrumentation.js",
+                            "Modules/Instrumentation/JavaScript/Instrumentation.Log.js",
+                            "Modules/Instrumentation/JavaScript/Instrumentation.Logger.js",
+                            "Modules/Instrumentation/JavaScript/Instrumentation.MockAppender.js",
+                            "Modules/Main/JavaScript/SuiteCommerce.GridOrder.Shopping.js",
+                            "Modules/PDP/JavaScript/PDP.Configuration.js",
+                            "Modules/PDP/JavaScript/PDP.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.Collection.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.MatrixChildItem.Model.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.MatrixItemOption.Model.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.Model.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.PriceSchedule.Model.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.View.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Confirmation.View.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Footer.View.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Item.Controller.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Model.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Row.Collection.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Row.Model.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Row.View.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Summary.View.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.View.js",
+                            "Modules/Item/Item.Model.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.MatrixChildItem.ViewPrototype.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.MatrixItemOption.ViewPrototype.js",
+                            "Modules/GridOrder/JavaScript/GridOrder.Cell.PriceSchedule.ViewPrototype.js",
+                            "Modules/Common/JavaScript/InstrumentationHelper.js",
+                            "Modules/Common/JavaScript/DependencyProvider.js"
+                        ]
+                    }
+                }
+            },
+            "local_folder": "Workspace\\GridOrder",
+            "path": "SuiteScripts/extensions/SuiteCommerce/GridOrder@1.0.5",
+            "activation_id": "8",
+            "extension_id": "6301"
         },
         {
             "name": "HideQuoteExtension",
@@ -527,6 +773,123 @@
             "extension_id": "5401"
         },
         {
+            "name": "Manuals",
+            "fantasyName": "Manuals",
+            "vendor": "JHM",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "version": "1.0.0",
+            "description": "Manuals",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": [
+                        "services/Manuals.Service.ss"
+                    ]
+                }
+            },
+            "templates": {
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/Manuals/Templates/manuals_page.tpl",
+                            "Modules/Manuals/Templates/manuals_single_item.tpl",
+                            "Modules/Manuals/Templates/manuals_product.tpl"
+                        ]
+                    }
+                }
+            },
+            "sass": {
+                "entry_points": {
+                    "shopping": "Modules/Manuals/Sass/_manuals-manuals.scss"
+                },
+                "files": [
+                    "Modules/Manuals/Sass/_manuals-manuals.scss",
+                    "Modules/Manuals/Sass/_manuals.scss"
+                ]
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/Manuals/JavaScript/JHM.Manuals.Manuals.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/Manuals/JavaScript/JHM.Manuals.Manuals.js",
+                            "Modules/Manuals/JavaScript/Manuals.Router.js",
+                            "Modules/Manuals/JavaScript/Manuals.Model.js",
+                            "Modules/Manuals/JavaScript/Manuals.Page.View.js",
+                            "Modules/Manuals/JavaScript/Manuals.Single.View.js",
+                            "Modules/Manuals/JavaScript/Manuals.Product.View.js"
+                        ]
+                    }
+                }
+            },
+            "ssp-libraries": {
+                "entry_point": "Modules/Manuals/SuiteScript/JHM.Manuals.Manuals.js",
+                "files": [
+                    "Modules/Manuals/SuiteScript/JHM.Manuals.Manuals.js",
+                    "Modules/Manuals/SuiteScript/Manuals.ServiceController.js",
+                    "Modules/Manuals/SuiteScript/Manuals.Model.js"
+                ]
+            },
+            "path": "SuiteScripts/Deploy_Extensions/JHM/Manuals@1.0.0",
+            "activation_id": "8",
+            "extension_id": "601"
+        },
+        {
+            "name": "Moment",
+            "fantasyName": "Moment",
+            "vendor": "JHM",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "version": "2.22.2",
+            "description": "Moment.js",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": []
+                }
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/Moment/JavaScript/Moment.js",
+                    "myaccount": "Modules/Moment/JavaScript/Moment.js",
+                    "checkout": "Modules/Moment/JavaScript/Moment.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/Moment/JavaScript/Moment.js"
+                        ]
+                    },
+                    "myaccount": {
+                        "files": [
+                            "Modules/Moment/JavaScript/Moment.js"
+                        ]
+                    },
+                    "checkout": {
+                        "files": [
+                            "Modules/Moment/JavaScript/Moment.js"
+                        ]
+                    }
+                }
+            },
+            "path": "SuiteScripts/Deploy_Extensions/JHM/Moment@2.22.2",
+            "activation_id": "8",
+            "extension_id": "701"
+        },
+        {
             "name": "News",
             "fantasyName": "News",
             "vendor": "JHM",
@@ -611,7 +974,7 @@
                 "SCA": ">=21.1.0",
                 "SCS": ">=21.1.0"
             },
-            "version": "1.7.0",
+            "version": "2.2.0",
             "description": "",
             "override": [],
             "skins": [
@@ -1968,9 +2331,9 @@
                     ]
                 }
             },
-            "path": "SuiteScripts/Deploy_Extensions/SALORAERP/PA2021_Theme@1.7.0",
+            "path": "SuiteScripts/Deploy_Extensions/SALORAERP/PA2021_Theme@2.2.0",
             "activation_id": "8",
-            "extension_id": "5801"
+            "extension_id": "6601"
         },
         {
             "name": "ProductDetailsExtension",
@@ -2014,6 +2377,65 @@
             "path": "SuiteScripts/Deploy_Extensions/Salora/ProductDetailsExtension@1.0.0",
             "activation_id": "8",
             "extension_id": "5601"
+        },
+        {
+            "name": "StateComplianceWarning",
+            "fantasyName": "State Compliance Warning",
+            "vendor": "JHM",
+            "type": "extension",
+            "target": "SCA,SCS",
+            "version": "1.0.0",
+            "description": "State Compliance Warning",
+            "assets": {
+                "img": {
+                    "files": []
+                },
+                "fonts": {
+                    "files": []
+                },
+                "services": {
+                    "files": []
+                }
+            },
+            "configuration": {
+                "files": [
+                    "Modules/StateComplianceWarning/Configuration/StateComplianceWarning.json"
+                ]
+            },
+            "templates": {
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/StateComplianceWarning/Templates/state_warning_icons_pdp.tpl"
+                        ]
+                    }
+                }
+            },
+            "sass": {
+                "entry_points": {
+                    "shopping": "Modules/StateComplianceWarning/Sass/_statecompliancewarning-statecompliancewarning.scss"
+                },
+                "files": [
+                    "Modules/StateComplianceWarning/Sass/_statecompliancewarning-statecompliancewarning.scss",
+                    "Modules/StateComplianceWarning/Sass/_statecompliancewarning.scss"
+                ]
+            },
+            "javascript": {
+                "entry_points": {
+                    "shopping": "Modules/StateComplianceWarning/JavaScript/StateComplianceWarning.View.js"
+                },
+                "application": {
+                    "shopping": {
+                        "files": [
+                            "Modules/StateComplianceWarning/JavaScript/StateComplianceWarning.View.js",
+                            "Modules/StateComplianceWarning/JavaScript/StateComplianceWarning.js"
+                        ]
+                    }
+                }
+            },
+            "path": "SuiteScripts/Deploy_Extensions/JHM/StateComplianceWarning@1.0.0",
+            "activation_id": "8",
+            "extension_id": "901"
         },
         {
             "name": "Testimonials",
